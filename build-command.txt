@@ -1,0 +1,3 @@
+docker build -t lamp-stack .
+//docker run -p 8080:80 -p 3307:3306 -e MYSQL_ROOT_PASSWORD=root -it lamp-stack
+docker-compose up -d
