@@ -37,13 +37,18 @@ RUN mkdir -p /var/run/mysqld && \
 # Install phpMyAdmin manually
 RUN wget https://files.phpmyadmin.net/phpMyAdmin/${PHPMYADMIN_VERSION}/phpMyAdmin-${PHPMYADMIN_VERSION}-all-languages.zip && \
     unzip phpMyAdmin-${PHPMYADMIN_VERSION}-all-languages.zip && \
-    mv phpMyAdmin-${PHPMYADMIN_VERSION}-all-languages /var/www/html/phpmyadmin && \
+    mv phpMyAdmin-${PHPMYADMIN_VERSION}-all-languages /var/www/phpmyadmin && \
     rm phpMyAdmin-${PHPMYADMIN_VERSION}-all-languages.zip && \
-    chown -R www-data:www-data /var/www/html/phpmyadmin
+    chown -R www-data:www-data /var/www/phpmyadmin
 
 # Copy start script
+
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
+
+COPY phpmyadmin.conf /etc/apache2/sites-available/phpmyadmin.conf
+WORKDIR /etc/apache2/sites-available/
+RUN a2ensite phpmyadmin.conf
 
 # Set working directory
 WORKDIR /var/www/html
