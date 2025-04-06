@@ -22,6 +22,8 @@ RUN apt-get update && apt-get install -y \
     php-json \
     php-curl \
     php-xml \
+    php-intl \
+    php-gd \
     php-mysqli && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
