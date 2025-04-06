@@ -49,6 +49,9 @@ COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
 COPY phpmyadmin.conf /etc/apache2/sites-available/phpmyadmin.conf
+COPY php.ini /etc/php/8.3/apache2/php.ini
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
 WORKDIR /etc/apache2/sites-available/
 RUN a2ensite phpmyadmin.conf
 
