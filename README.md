@@ -1,7 +1,7 @@
 # Docker Lamp
 
 This is a docker image and container combination for up and running LAMP Server
-Useful for Shopware 6, Wordpress/WooCommerce or similar project
+Useful for Shopware 6, Wordpress/WooCommerce or similar projects
 
 
 
