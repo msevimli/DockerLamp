@@ -32,3 +32,5 @@ To access phpmyadmin edit your host file in host machine
 ```
 
 All Done!
+Base .src folder at host machine linked to /www/html/ in server
+Enjoy..
